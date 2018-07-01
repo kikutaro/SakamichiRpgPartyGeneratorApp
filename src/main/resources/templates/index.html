@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"></link>
+    <link href="/css/normalize.css" th:href="@{/css/normalize.css}" rel="stylesheet"></link>
+    <link href="/css/milligram.min.css" th:href="@{/css/milligram.min.css}" rel="stylesheet"></link>
+    <title>坂道RPGパーティジェネレータ</title>
+    <meta name="description" content="あなたが勇者となって坂道グループメンバーと旅に出る。そんなRPGのパーティを決めるジェネレータです。乃木坂46,欅坂46,けやき坂46(ひらがなけやき)の3グループに対応しています。">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@sakagene46">
+    <meta name="twitter:creator" content="@sakagene46">
+    <meta name="twitter:title" content="坂道RPGパーティジェネレータ">
+    <meta name="twitter:description" th:attr="content= @{'勇者「' + ${name} + '」のパーティ #sakagene46'}">
+    <meta name="twitter:image" th:attr="content=@{${imageUrl}}">
+    <meta property="og:url" content="http://rpgpartygenerator.sakamichi46.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="坂道RPGパーティジェネレータ" />
+    <meta property="og:description" th:attr="content= @{'勇者「' + ${name} + '」のパーティ #sakagene46'}">
+    <meta property="og:image" th:attr="content=@{${imageUrl}}">
+</head>
+
+<!--<body style="background-color: black;">-->
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGTLDPW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="container full-sreen">
+        <div class="row">
+            <div class="column">
+                <a href="/path/to/image" th:attr="download=@{'勇者' + ${name}+ 'のパーティ'}">
+                    <img class="info result" th:attr="src=@{${imageUrl}}, alt=@{'勇者' + ${name}+ 'のパーティ'}">
+                </a>
+            </div>
+        </div>
+        <div class="row row-space">
+            <div class="column"></div>
+            <div class="column">
+                <!-- Twitter Share Button Start -->
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" th:attr="data-text= @{'勇者「' + ${name}} + '」のパーティを坂道RPGパーティジェネレータで生成したよ！ #sakagene46'" data-via="sakagene46" data-hashtags="sakagene46" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <!-- Twitter Share Button End -->
+            </div>
+            <div class="column">
+                <!-- Facebook Share Button Start -->
+                <div class="fb-share-button" 
+                     data-href="http://www.rpgparty.sakamichi46.com/" 
+                     data-layout="button_count" data-size="large" data-mobile-iframe="true">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.rpgparty.sakamichi46.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a>
+                </div>
+                <!-- Facebook Share Button End -->
+            </div>
+            <div class="column"></div>
+        </div>
+        <div>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- 坂道RPGパーティジェネレータ -->
+            <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-9872727933973932"
+                data-ad-slot="8659376423"
+                data-ad-format="link"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        <div class="row">
+            <div class="column">
+                 <div class="column"><a class="button" href="http://www.rpgparty.sakamichi46.com/nogiparty.html">乃木坂46</a></div>
+            </div>
+            <div class="column">
+                <div class="column"><a class="button button-green" href="#">欅坂46 COMING SOON</a></div>
+            </div>
+            <div class="column">
+                <div class="column"><a class="button button-green" href="#">けやき坂46 COMING SOON</a></div>
+            </div>
+        </div>
+        <div class="row row-space">
+            <div class="column">
+                 <a class="button" href="http://www.rpgparty.sakamichi46.com/">坂道RPGパーティジェネレータトップページへ戻る</a>
+            </div>
+        </div>
+        <footer>
+            <a href="mailto:sakagene46@gmail.com" class="fa fa-envelope"></a>
+            <a href="https://twitter.com/sakagene46" class="fa fa-twitter" target="_blank"></a>
+        </footer>
+    </div>
+    <!-- Facebook SDK Start -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v3.0&appId=369668986892945&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- Facebook SDK End -->
+</body>
+
+</html>
