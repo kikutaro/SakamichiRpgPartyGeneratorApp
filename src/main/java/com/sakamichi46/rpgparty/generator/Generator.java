@@ -23,6 +23,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Map;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -154,11 +155,11 @@ public class Generator {
                     "api_secret", cloudinaryProp.getApisecret())
                 );
 
-                cloudinary.uploader().upload(outputfile,
+                Map upload = cloudinary.uploader().upload(outputfile,
                         ObjectUtils.asMap(
                                 "public_id", name,
                                 "folder", "SakamichiRpgParty"));
-                url = cloudinary.url().format("jpg").transformation().generate();
+                url = (String) upload.get("url");
             } else {
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
                 ImageIO.write(bufferedImage, "jpg", os);
