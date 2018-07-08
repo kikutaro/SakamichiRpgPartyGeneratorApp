@@ -52,6 +52,9 @@
                 <a id="twitterButtonPc" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" th:attr="data-text= @{'勇者「' + ${name}} + '」のパーティを坂道RPGパーティジェネレータで生成したよ！'" data-via="sakagene46" data-hashtags="sakagene46" data-lang="ja" data-show-count="false" style="color: white;">PCからTwitterでシェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 <!-- Twitter Share Button End -->
             </div>
+        </div>
+        <div class="row row-space">
+            <div class="column"></div>
             <div class="column">
                 <!-- LINE Share Button Start -->
                 <a id="lineButton" href="">
@@ -115,7 +118,7 @@
     <!-- Facebook SDK End -->
     <script>
         document.getElementById("lineButton").href = "https://social-plugins.line.me/lineit/share?url=" + document.URL;
-        document.getElementById("twitterButtonMobile").href = "twitter://post?message=坂道RPGジェネレータ "  + document.URL;
+        document.getElementById("twitterButtonMobile").href = "twitter://post?message=坂道RPGパーティジェネレータでパーティを生成したよ！ #sakagene46 @sakagene46 "  + document.URL;
     </script>
 </body>
 
