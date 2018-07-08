@@ -118,7 +118,7 @@
     <!-- Facebook SDK End -->
     <script>
         document.getElementById("lineButton").href = "https://social-plugins.line.me/lineit/share?url=" + document.URL;
-        document.getElementById("twitterButtonMobile").href = "twitter://post?message=坂道RPGパーティジェネレータ(@sakagene46)でパーティを生成したよ！ "  + document.URL;
+        document.getElementById("twitterButtonMobile").href = "twitter://post?message=坂道RPGパーティジェネレータ(@sakagene46)でパーティを生成したよ！ "  + encodeURIComponent(document.URL);
     </script>
 </body>
 
