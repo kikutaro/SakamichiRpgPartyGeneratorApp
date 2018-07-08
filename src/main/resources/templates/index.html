@@ -16,7 +16,7 @@
     <meta name="twitter:title" content="坂道RPGパーティジェネレータ">
     <meta name="twitter:description" th:attr="content= @{'勇者「' + ${name} + '」のパーティ #sakagene46'}">
     <meta name="twitter:image" th:attr="content=@{${imageUrl}}">
-    <meta property="og:url" content="http://rpgpartygenerator.sakamichi46.com/" />
+    <meta property="og:url" content="https://rpgpartygenerator.sakamichi46.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="坂道RPGパーティジェネレータ" />
     <meta property="og:description" th:attr="content= @{'勇者「' + ${name} + '」のパーティ #sakagene46'}">
@@ -41,18 +41,30 @@
             <div class="column message animated infinite swing">画像をシェアしてね！</div>
         </div>
         <div class="row">
-            <div class="column"></div>
             <div class="column">
                 <!-- Twitter Share Button Start -->
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" th:attr="data-text= @{'勇者「' + ${name}} + '」のパーティを坂道RPGパーティジェネレータで生成したよ！ #sakagene46'" data-via="sakagene46" data-hashtags="sakagene46" data-lang="ja" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a id="twitterButtonMobile" href="" style="color: white;">スマホからTwitterでシェアする</a>
                 <!-- Twitter Share Button End -->
+            </div>
+            <div class="column">
+                <!-- Twitter Share Button Start -->
+                <!--  class="twitter-share-button" を削除 -->
+                <a id="twitterButtonPc" href="https://twitter.com/share?ref_src=twsrc%5Etfw" data-size="large" th:attr="data-text= @{'勇者「' + ${name}} + '」のパーティを坂道RPGパーティジェネレータで生成したよ！'" data-via="sakagene46" data-hashtags="sakagene46" data-lang="ja" data-show-count="false" style="color: white;">PCからTwitterでシェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <!-- Twitter Share Button End -->
+            </div>
+            <div class="column">
+                <!-- LINE Share Button Start -->
+                <a id="lineButton" href="">
+                    <img src="/images/share-a.png" height="28" alt="LINEで送る" />
+                </a>
+                <!-- LINE Share Button End -->
             </div>
             <div class="column">
                 <!-- Facebook Share Button Start -->
                 <div class="fb-share-button" 
                      data-href="http://www.rpgparty.sakamichi46.com/" 
                      data-layout="button_count" data-size="large" data-mobile-iframe="true">
-                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.rpgparty.sakamichi46.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a>
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.rpgparty.sakamichi46.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a>
                 </div>
                 <!-- Facebook Share Button End -->
             </div>
@@ -101,6 +113,10 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!-- Facebook SDK End -->
+    <script>
+        document.getElementById("lineButton").href = "https://social-plugins.line.me/lineit/share?url=" + document.URL;
+        document.getElementById("twitterButtonMobile").href = "twitter://post?message=坂道RPGジェネレータ "  + document.URL;
+    </script>
 </body>
 
 </html>
