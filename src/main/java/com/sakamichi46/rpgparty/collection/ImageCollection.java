@@ -11,30 +11,49 @@ import org.springframework.core.io.ClassPathResource;
 
 public class ImageCollection {
     
-    private static List<BufferedImage> images;
+    private static List<BufferedImage> nogizakaImages;
+    private static List<BufferedImage> keyakizakaImages;
     
     public static List<BufferedImage> nogizakaImages() {
-        if(images == null) {
-            images = new ArrayList<>();
+        if(nogizakaImages == null) {
+            nogizakaImages = new ArrayList<>();
             try {
                 //TODO:後ほどフォルダ指定に変える
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\logo_nogizaka.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\1st_guruguruka-ten1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\2nd_oideshanpu-1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\3rd_hasirebicycle1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\4th_seihukunomanekin1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\6th_ga-ruzuru-ru1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\7th_baretta1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\10th_nandomeno_aozoraka1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\11th_inochihautukusii1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\13th_imahanasitaidarekagairu1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\15th_hadasidesummer1.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\16th_sayonaranoimi.png").getInputStream()));
-                images.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\19th_itukadekirukarakyoudekiru1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\logo_nogizaka.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\1st_guruguruka-ten1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\2nd_oideshanpu-1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\3rd_hasirebicycle1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\4th_seihukunomanekin1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\6th_ga-ruzuru-ru1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\7th_baretta1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\10th_nandomeno_aozoraka1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\11th_inochihautukusii1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\13th_imahanasitaidarekagairu1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\15th_hadasidesummer1.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\16th_sayonaranoimi.png").getInputStream()));
+                nogizakaImages.add(ImageIO.read(new ClassPathResource("images\\nogizaka\\19th_itukadekirukarakyoudekiru1.png").getInputStream()));
             } catch (IOException ex) {
                 Logger.getLogger(ImageCollection.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return images;
+        return nogizakaImages;
+    }
+    
+    public static List<BufferedImage> keyakizakaImages() {
+        if(keyakizakaImages == null) {
+            keyakizakaImages = new ArrayList<>();
+            try {
+                //TODO:後ほどフォルダ指定に変える
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\logo_keyakizaka.png").getInputStream()));
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\2nd_sekainihaaisikanainda1.png").getInputStream()));
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\3rd_hutarisezon1.png").getInputStream()));
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\4th_hukyouwaon1.png").getInputStream()));
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\5th_kazenihukaretemo1.png").getInputStream()));
+                keyakizakaImages.add(ImageIO.read(new ClassPathResource("images\\keyakizaka\\6th_garasuwoware1.png").getInputStream()));
+            } catch (IOException ex) {
+                Logger.getLogger(ImageCollection.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return keyakizakaImages;
     }
 }

@@ -144,7 +144,7 @@ public class Generator {
                     graphics.drawString("まちがい", 0, 100);
                 }
             }
-            
+       
             String url = null;
             if(cloudinaryProp.getOn().equals("true")) {
                 File outputfile = new File(name + ".jpg");
@@ -158,7 +158,7 @@ public class Generator {
                 Map upload = cloudinary.uploader().upload(outputfile,
                         ObjectUtils.asMap(
                                 "public_id", name,
-                                "folder", "SakamichiRpgParty"));
+                                "folder", (this instanceof KeyakizakaGenerator) ? "keyakizaka46" : "SakamichiRpgParty"));
                 url = (String) upload.get("url");
             } else {
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
