@@ -41,12 +41,12 @@
             <div class="column message animated infinite swing">画像をシェアしてね！</div>
         </div>
         <div class="row">
-            <div class="column">
+            <div class="column show-only-mobile">
                 <!-- Twitter Share Button Start -->
                 <a id="twitterButtonMobile" href="" style="color: white;">スマホからTwitterでシェアする</a>
                 <!-- Twitter Share Button End -->
             </div>
-            <div class="column">
+            <div class="column show-only-over-mobile">
                 <!-- Twitter Share Button Start -->
                 <!--  class="twitter-share-button" を削除 -->
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" th:attr="data-text= @{'勇者「' + ${name}} + '」のパーティを坂道RPGパーティジェネレータで生成したよ！'" data-via="sakagene46" data-hashtags="sakagene46" data-lang="ja" data-show-count="false" style="color: white;">PCからTwitterでシェアする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -116,9 +116,11 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!-- Facebook SDK End -->
-    <script>
+    <script th:inline="javascript">
+    /*<![CDATA[*/
         document.getElementById("lineButton").href = "https://social-plugins.line.me/lineit/share?url=" + document.URL;
-        document.getElementById("twitterButtonMobile").href = "twitter://post?message=パーティを生成したよ! @sakagene46 "  + encodeURIComponent(document.URL);
+        document.getElementById("twitterButtonMobile").href = "twitter://post?message=勇者「" + [[ ${name} ]] + "」のパーティを坂道RPGパーティジェネレータで生成したよ！ @sakagene46 "  + encodeURIComponent(document.URL);
+    /*]]>*/
     </script>
 </body>
 

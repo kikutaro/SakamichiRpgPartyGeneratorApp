@@ -36,3 +36,20 @@ body {
 .message {
     color: white;
 }
+
+.show-only-mobile {
+    display: inline !important;
+}
+
+.show-only-over-mobile {
+    display: none !important;
+}
+
+@media (min-width: 40.0rem) {
+    .show-only-mobile {
+        display: none !important;
+    }
+    .show-only-over-mobile {
+        display: inline !important;
+    }
+}
