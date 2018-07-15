@@ -121,7 +121,7 @@ public class Generator {
         });
         
         try {
-            InputStream fontStream = new ClassPathResource("font\\PixelMplus10-Regular.ttf").getInputStream();
+            InputStream fontStream = new ClassPathResource("static\\font\\PixelMplus10-Regular.ttf").getInputStream();
             Font font = Font.createFont(Font.TRUETYPE_FONT, fontStream);
             Font fontBase = font.deriveFont(Font.PLAIN, 20);
             System.out.println(font.getSize());
