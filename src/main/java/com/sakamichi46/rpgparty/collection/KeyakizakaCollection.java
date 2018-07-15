@@ -32,7 +32,7 @@ public class KeyakizakaCollection {
                     new Member("守屋 茜","もりや あかね", 10),
                     new Member("米谷 奈々未","よねたに ななみ", 10),
                     new Member("渡辺 梨加","わたなべ りか", 10),
-                    new Member("渡邉 理佐","わたなべ りか", 10)
+                    new Member("渡邉 理佐","わたなべ りさ", 10)
             ).collect(Collectors.toList());
         } else {
             return members;
