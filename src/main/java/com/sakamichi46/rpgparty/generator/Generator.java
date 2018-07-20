@@ -165,7 +165,8 @@ public class Generator {
                 Map upload = cloudinary.uploader().upload(outputfile,
                         ObjectUtils.asMap(
                                 "public_id", name,
-                                "folder", folderName));
+                                "folder", folderName,
+                                "tags", partyMemberList.stream().filter(m -> !(m.getJob().startsWith("ゆうしゃ"))).map(m -> m.getNameHiragana()).toArray()));
                 url = (String) upload.get("url");
             } else {
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
