@@ -13,6 +13,7 @@ public class ImageCollection {
     
     private static List<BufferedImage> nogizakaImages;
     private static List<BufferedImage> keyakizakaImages;
+    private static List<BufferedImage> hiraganaKeyakiImages;
     
     public static List<BufferedImage> nogizakaImages() {
         if(nogizakaImages == null) {
@@ -55,5 +56,24 @@ public class ImageCollection {
             }
         }
         return keyakizakaImages;
+    }
+    
+    public static List<BufferedImage> hiraganaKeyakiImages() {
+        if(hiraganaKeyakiImages == null) {
+            hiraganaKeyakiImages = new ArrayList<>();
+            try {
+                //TODO:後ほどフォルダ指定に変える
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\1.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\2.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\3.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\4.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\5.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\6.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\7.png").getInputStream()));
+            } catch (IOException ex) {
+                Logger.getLogger(ImageCollection.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return hiraganaKeyakiImages;
     }
 }

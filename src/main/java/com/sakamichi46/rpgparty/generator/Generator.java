@@ -154,11 +154,18 @@ public class Generator {
                     "api_key", cloudinaryProp.getApikey(),
                     "api_secret", cloudinaryProp.getApisecret())
                 );
+                
+                String folderName = "SakamichiRpgParty";
+                if(this instanceof KeyakizakaGenerator) {
+                    folderName = "keyakizaka46";
+                } else if(this instanceof HiraganaKeyakiGenerator) {
+                    folderName = "hiraganakeyakizaka46";
+                }
 
                 Map upload = cloudinary.uploader().upload(outputfile,
                         ObjectUtils.asMap(
                                 "public_id", name,
-                                "folder", (this instanceof KeyakizakaGenerator) ? "keyakizaka46" : "SakamichiRpgParty"));
+                                "folder", folderName));
                 url = (String) upload.get("url");
             } else {
                 ByteArrayOutputStream os = new ByteArrayOutputStream();
