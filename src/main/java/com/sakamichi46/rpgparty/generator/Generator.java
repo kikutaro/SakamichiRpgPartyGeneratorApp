@@ -124,7 +124,6 @@ public class Generator {
             InputStream fontStream = new ClassPathResource("static\\font\\PixelMplus10-Regular.ttf").getInputStream();
             Font font = Font.createFont(Font.TRUETYPE_FONT, fontStream);
             Font fontBase = font.deriveFont(Font.PLAIN, 20);
-            System.out.println(font.getSize());
             BufferedImage bufferedImage = new BufferedImage(600, 314, BufferedImage.TYPE_INT_RGB);
             Graphics graphics = bufferedImage.getGraphics();
             graphics.setColor(Color.BLACK);
