@@ -121,7 +121,7 @@
     <script th:inline="javascript">
     /*<![CDATA[*/
         document.getElementById("lineButton").href = "https://social-plugins.line.me/lineit/share?url=" + document.URL;
-        document.getElementById("twitterButtonMobile").href = "twitter://post?message=勇者「" + [[ ${name} ]] + "」のパーティを坂道RPGパーティジェネレータで生成したよ！ @sakagene46 "  + encodeURIComponent(document.URL);
+        document.getElementById("twitterButtonMobile").href = "twitter://post?message=勇者「" + [[ ${name} ]] + "」のパーティを坂道RPGパーティジェネレータで生成したよ！ %23sakagene46 @sakagene46 "  + encodeURIComponent(document.URL);
     /*]]>*/
     </script>
 </body>
