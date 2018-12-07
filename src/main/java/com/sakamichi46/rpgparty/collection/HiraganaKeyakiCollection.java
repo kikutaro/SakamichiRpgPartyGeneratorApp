@@ -31,7 +31,8 @@ public class HiraganaKeyakiCollection {
                     new Member("濱岸 ひより","はまぎし ひより", 10),
                     new Member("松田 好花","まつだ このか", 10),
                     new Member("宮田 愛萌","みやた まなも", 10),
-                    new Member("渡邉 美穂","わたなべ みほ", 10)
+                    new Member("渡邉 美穂","わたなべ みほ", 10),
+                    new Member("上村 ひなの","かみむら ひなの", 10)
             ).collect(Collectors.toList());
         } else {
             return members;
