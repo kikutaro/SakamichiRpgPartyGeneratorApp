@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
+import java.util.concurrent.atomic.*;
 
 public class Generator {
     
@@ -76,7 +77,7 @@ public class Generator {
         return sb.toString();
     }
     
-    private PartyMember generatePartyMember(String key) {
+    private PartyMember generatePartyMember(String key, int cnt) {
         //16桁の文字列を16進数で合計した値をランダム値のシードに利用する
         int val = IntStream.range(0, key.length())
                 .map(num ->  Character.getNumericValue(key.charAt(num)))
@@ -87,12 +88,12 @@ public class Generator {
         partyMember.setName(member.getName());
         partyMember.setNameHiragana(member.getNameHiragana());
         
-        //jobは1桁目をシードに利用する
-        random = new Random(Character.getNumericValue(key.charAt(0)));
+        //jobはループのカウントに合わせて前から
+        random = new Random(Character.getNumericValue(key.charAt(cnt)));
         String job = jobsList.get(random.nextInt(jobsList.size()));
         
-        //画像は2桁目をシードに利用する
-        random = new Random(Character.getNumericValue(key.charAt(1)));
+        //画像はループのカウントに合わせて後ろから
+        random = new Random(Character.getNumericValue(key.charAt(key.length() - 1 - cnt)));
         BufferedImage image = imageList.get(random.nextInt(imageList.size() - 1) + 1);
         
         partyMember.setJob(job);
@@ -114,10 +115,12 @@ public class Generator {
         //ユーザ
         PartyMember you = new PartyMember(name, name, "ゆうしゃ　　", imageList.get(0));
         partyMemberList.add(you);
+        final AtomicInteger cnt = new AtomicInteger(0);
         keys.stream().forEach(k -> {
-            PartyMember member = generatePartyMember(k);
+            PartyMember member = generatePartyMember(k, cnt.get());
             partyMemberList.add(member);
             generatorMemberList.removeIf(m -> m.getName().equals(member.getName()));
+            cnt.addAndGet(1);
         });
         
         try {

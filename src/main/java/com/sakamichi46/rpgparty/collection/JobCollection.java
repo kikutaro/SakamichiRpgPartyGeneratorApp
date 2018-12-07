@@ -19,7 +19,9 @@ public class JobCollection {
                     "あそびにん　",
                     "けんじゃ　　",
                     "とうぞく　　",
-                    "おどりこ　　"
+                    "おどりこ　　",
+                    "まほうせんし",
+                    "かいぞく　　"
                     ).collect(Collectors.toList());
         } else {
             return jobs;
