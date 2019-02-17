@@ -28,6 +28,11 @@ body {
     border-color: green !important;
 }
 
+.button-sky {
+    background-color: #7cc8e9 !important;
+    border-color: #7cc8e9 !important;
+}
+
 .row-space {
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
