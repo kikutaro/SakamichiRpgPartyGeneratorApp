@@ -63,7 +63,7 @@ public class ImageCollection {
             hiraganaKeyakiImages = new ArrayList<>();
             try {
                 //TODO:後ほどフォルダ指定に変える
-                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\logo_keyakizaka.png").getInputStream()));
+                hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\logo_hinatazaka.png").getInputStream()));
                 hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\1.png").getInputStream()));
                 hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\2.png").getInputStream()));
                 hiraganaKeyakiImages.add(ImageIO.read(new ClassPathResource("images\\hiraganakeyakizaka\\3.png").getInputStream()));
